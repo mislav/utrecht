@@ -36,4 +36,5 @@ IFS='|'
 if egrep -inH --color "\\b(${weasels[*]})\\b" "$@"; then
   echo
   echo "ERROR: weasel words detected in source text."
+  exit 1
 fi
