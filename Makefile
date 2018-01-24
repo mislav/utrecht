@@ -3,7 +3,7 @@
 all: paper.html
 
 install:
-	@Rscript install.r
+	Rscript -e 'install.packages("rmarkdown", repos="http://cran.us.r-project.org")'
 
-%.html: %.Rmd render.r
-	@Rscript render.r
+%.html: %.Rmd
+	Rscript -e 'library(rmarkdown)' -e 'render("$<")'
